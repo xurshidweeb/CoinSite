@@ -30,7 +30,7 @@ const Index = () => {
     : products.filter(p => p.category === activeCategory);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <Header 
         cartItemsCount={totalItems} 
         onCartClick={() => setShowCart(true)} 
@@ -56,10 +56,10 @@ const Index = () => {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all ${
+                className={`px-5 py-2.5 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-300 ${
                   activeCategory === cat
-                    ? "gradient-primary text-primary-foreground shadow-md"
-                    : "bg-muted text-muted-foreground hover:bg-muted/80"
+                    ? "glass-pill-active"
+                    : "glass-pill text-white hover:bg-white/20"
                 }`}
               >
                 {cat}
@@ -86,9 +86,9 @@ const Index = () => {
       </main>
 
       {/* Footer */}
-      <footer className="mt-12 py-6 border-t border-border bg-card">
+      <footer className="mt-12 py-6 border-t border-white/20 bg-white/10 backdrop-blur-md">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-muted-foreground text-sm">
+          <p className="text-muted-foreground text-sm font-medium">
             © 2024 IT Time Academy. Barcha huquqlar himoyalangan.
           </p>
         </div>

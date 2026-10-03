@@ -22,7 +22,7 @@ export function BannerCarousel() {
   if (banners.length === 0) return null;
 
   return (
-    <div className="relative w-full h-64 sm:h-80 md:h-[420px] lg:h-[500px] overflow-hidden rounded-xl shadow-card">
+    <div className="relative w-full h-64 sm:h-80 md:h-[420px] lg:h-[500px] overflow-hidden rounded-3xl glass-card">
       {/* Slides */}
       <div 
         className="flex h-full transition-transform duration-500 ease-out"
@@ -39,12 +39,12 @@ export function BannerCarousel() {
               className="w-full h-full object-cover"
             />
             {/* Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             
             {/* Title */}
             {banner.title && (
               <div className="absolute bottom-6 left-6 right-6">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-foreground drop-shadow-lg">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white drop-shadow-lg">
                   {banner.title}
                 </h2>
               </div>
@@ -58,14 +58,14 @@ export function BannerCarousel() {
         <>
           <button 
             onClick={prevSlide}
-            className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-card/80 backdrop-blur-sm flex items-center justify-center text-foreground hover:bg-card transition-colors shadow-lg"
+            className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full glass-pill hover:bg-white/20 flex items-center justify-center text-white transition-all shadow-lg active:scale-90"
             aria-label="Oldingi"
           >
             <ChevronLeft size={24} />
           </button>
           <button 
             onClick={nextSlide}
-            className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-card/80 backdrop-blur-sm flex items-center justify-center text-foreground hover:bg-card transition-colors shadow-lg"
+            className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full glass-pill hover:bg-white/20 flex items-center justify-center text-white transition-all shadow-lg active:scale-90"
             aria-label="Keyingi"
           >
             <ChevronRight size={24} />

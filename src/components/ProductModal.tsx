@@ -42,41 +42,41 @@ export function ProductModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-foreground/50 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-md"
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-2xl max-h-[90vh] bg-card rounded-2xl overflow-hidden shadow-2xl"
+        className="relative w-full max-w-2xl max-h-[90vh] glass-card rounded-3xl overflow-hidden shadow-2xl flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-card/90 backdrop-blur-sm flex items-center justify-center hover:bg-card shadow-lg"
+          className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full glass-pill flex items-center justify-center hover:bg-white/20 shadow-lg text-foreground transition-all"
         >
           <X size={20} />
         </button>
 
         {/* IMAGE GALLERY (FIX QILINGAN) */}
-        <div className="relative h-[320px] sm:h-[420px] bg-muted flex items-center justify-center">
+        <div className="relative h-[320px] sm:h-[420px] bg-white/20 flex items-center justify-center shrink-0">
           <img
             src={product.images[currentImage]}
             alt={product.name}
-            className="max-w-full max-h-full object-contain"
+            className="max-w-full max-h-full object-contain p-4 mix-blend-multiply"
           />
 
           {product.images.length > 1 && (
             <>
               <button
                 onClick={prevImage}
-                className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-card/80 backdrop-blur-sm flex items-center justify-center hover:bg-card shadow-lg"
+                className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full glass-pill flex items-center justify-center hover:bg-white/20 shadow-lg text-foreground transition-all"
               >
                 <ChevronLeft size={24} />
               </button>
 
               <button
                 onClick={nextImage}
-                className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-card/80 backdrop-blur-sm flex items-center justify-center hover:bg-card shadow-lg"
+                className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full glass-pill flex items-center justify-center hover:bg-white/20 shadow-lg text-foreground transition-all"
               >
                 <ChevronRight size={24} />
               </button>
@@ -88,8 +88,8 @@ export function ProductModal({
                     onClick={() => setCurrentImage(index)}
                     className={`h-2 rounded-full transition-all ${
                       index === currentImage
-                        ? "bg-primary-foreground w-6"
-                        : "bg-primary-foreground/50 w-2"
+                        ? "bg-primary w-6"
+                        : "bg-primary/50 w-2"
                     }`}
                   />
                 ))}
@@ -98,8 +98,7 @@ export function ProductModal({
           )}
         </div>
 
-        {/* CONTENT */}
-        <div className="p-6">
+        <div className="p-6 bg-white/10 backdrop-blur-xl shrink-0">
           <h2 className="text-2xl font-bold mb-3">{product.name}</h2>
 
           {product.description && (
@@ -114,7 +113,7 @@ export function ProductModal({
                 <img src={coin} alt="Coin" className="w-12 h-12" />
               </div>
               <div>
-                <p className="text-sm text-muted-foreground">Narxi</p>
+                <p className="text-sm text-muted-foreground font-medium">Narxi</p>
                 <p className="text-xl font-bold text-[#ffbf00]">
                   {product.price} coin
                 </p>
@@ -124,10 +123,10 @@ export function ProductModal({
             <Button
               onClick={handleAddToCart}
               size="lg"
-              className={`gap-2 transition-all ${
+              className={`gap-2 rounded-full px-6 transition-all shadow-md ${
                 added
-                  ? "bg-green-500 hover:bg-green-600"
-                  : "gradient-primary hover:opacity-90"
+                  ? "bg-green-500 hover:bg-green-600 text-white"
+                  : "bg-primary hover:bg-primary/90 text-white"
               }`}
             >
               {added ? (
@@ -138,7 +137,7 @@ export function ProductModal({
               ) : (
                 <>
                   <ShoppingCart size={20} />
-                  Savatga qo‘shish
+                  Savatga
                 </>
               )}
             </Button>

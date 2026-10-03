@@ -154,14 +154,14 @@ Jami: ${totalCoins} coin
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-foreground/50 backdrop-blur-sm animate-fade-in"
+      className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/40 backdrop-blur-md animate-fade-in"
       onClick={onClose}
     >
       <div
         className="
           relative w-full max-w-lg
           max-h-[calc(100dvh-1rem)] sm:max-h-[calc(100dvh-2rem)]
-          bg-card rounded-2xl overflow-hidden shadow-2xl animate-fade-in
+          glass-card rounded-3xl overflow-hidden shadow-2xl animate-fade-in
           flex flex-col min-h-0
         "
         onClick={(e) => e.stopPropagation()}
@@ -176,7 +176,7 @@ Jami: ${totalCoins} coin
           </div>
           <button
             onClick={onClose}
-            className="w-10 h-10 rounded-full hover:bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
+            className="w-10 h-10 rounded-full glass-pill hover:bg-white/20 flex items-center justify-center text-white transition-all shadow-lg active:scale-90"
           >
             <X size={20} />
           </button>

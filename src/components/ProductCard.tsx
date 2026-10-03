@@ -10,23 +10,23 @@ export function ProductCard({ product, onClick }: ProductCardProps) {
   return (
     <div 
       onClick={onClick}
-      className="group bg-card rounded-xl overflow-hidden shadow-card hover:shadow-hover transition-all duration-300 cursor-pointer hover:-translate-y-1"
+      className="group glass-card rounded-3xl overflow-hidden cursor-pointer"
     >
       {/* Image */}
-      <div className="relative aspect-square overflow-hidden bg-muted">
+      <div className="relative aspect-square overflow-hidden bg-white/20 p-2">
         <img 
           src={product.images[0]} 
           alt={product.name}
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          className="w-full h-full object-cover rounded-2xl transition-transform duration-300 group-hover:scale-105"
         />
         
         {/* Hover overlay */}
-        <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300" />
+        <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-300 rounded-3xl" />
       </div>
 
       {/* Content */}
-      <div className="p-4">
-        <h3 className="font-semibold text-card-foreground line-clamp-2 mb-2 min-h-[2.5rem]">
+      <div className="p-4 pt-2">
+        <h3 className="font-semibold text-foreground line-clamp-2 mb-2 min-h-[2.5rem]">
           {product.name}
         </h3>
         
